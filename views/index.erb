@@ -1,0 +1,14 @@
+<ul>
+  <% @recipes.each_with_index do |recipe, index| %>
+  <li style="color:black">
+   <strong><%= recipe.name %></strong> taking <%= recipe.prep_time %>:
+   <%= recipe.description %>
+   <form action="/destroy" method="post" class="delete">
+    <button type="submit" name="delete" class="delete">Delete</button>
+    <input type="hidden" name="delete" class="delete" value=recipe>
+  </form>
+   </li>
+  <%end%>
+</ul>
+
+<a href="/new"> Add a recipe! </a>
